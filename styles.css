@@ -2,7 +2,7 @@
 
   --black:#0A0A0A;--brown:#4A3327;--cream:#F6F3EC;--stone:#D9D6D2;--white:#fff;
 
-  --border:rgba(10,10,10,.12);--muted:#77736d;--max:1440px;
+  --border:rgba(10,10,10,.12);--muted:#69655f;--max:1440px;
 
 }
 
@@ -46,6 +46,28 @@
 .about{text-align:center;max-width:900px}.about h2{margin-bottom:35px}.about-text{max-width:600px;margin:auto;line-height:1.9;font-size:14px;color:#57534e}
 
 footer{background:var(--black);color:#fff;padding:75px 40px 25px}.footer-top{max-width:var(--max);margin:auto;display:grid;grid-template-columns:1fr 1fr 1.3fr;gap:40px}.footer-brand{font-size:15px;font-weight:700;letter-spacing:.2em}.footer-top p{color:#aaa;margin-top:12px;font-size:12px}.footer-links{display:flex;flex-direction:column;gap:12px;font-size:12px}.newsletter form{display:flex;border-bottom:1px solid #555}.newsletter input{background:none;border:0;outline:0;color:#fff;padding:12px 0;flex:1;font-size:12px}.newsletter button{background:none;border:0;color:#fff}.footer-bottom{max-width:var(--max);margin:75px auto 0;padding-top:18px;border-top:1px solid #2d2d2d;display:flex;justify-content:space-between;font-size:9px;color:#777;letter-spacing:.08em}
+footer .footer-bottom{color:#aaa}
+.footer-cookie-settings{padding:0;border:0;background:none;color:inherit;text-align:left;font:inherit}
+.faq{border-top:1px solid var(--border)}
+.faq h2{font-size:clamp(42px,5vw,72px);letter-spacing:-.055em;margin:0 0 30px}
+.faq-item{max-width:760px;padding:20px 0;border-top:1px solid var(--border)}
+.faq-item h3{margin:0 0 8px;font-size:16px}
+.faq-item p{margin:0;color:var(--muted);font-size:14px;line-height:1.7}
+.form-status{min-height:1.4em;margin:8px 0 0;font-size:12px;line-height:1.5;color:inherit}
+.form-honeypot{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.cookie-banner{position:fixed;left:20px;right:20px;bottom:20px;z-index:80;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px 26px;background:var(--cream);color:var(--black);border:1px solid var(--border);box-shadow:0 12px 40px rgba(0,0,0,.2)}
+.cookie-banner[hidden]{display:none}
+.cookie-banner h2{margin:0 0 6px;font-size:16px}
+.cookie-banner p{margin:0 0 6px;font-size:12px;line-height:1.6}
+.cookie-banner a{font-size:12px;text-decoration:underline}
+.cookie-banner .btn{flex-shrink:0}
+.cookie-banner button:focus-visible,.footer-cookie-settings:focus-visible,a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #704a35;outline-offset:3px}
+.legal-header{max-width:900px;margin:0 auto;padding:26px 24px}
+.legal-main{max-width:900px;margin:0 auto;padding:50px 24px 100px;line-height:1.75}
+.legal-main h1{font-size:clamp(36px,6vw,64px);line-height:1.05;letter-spacing:-.05em}
+.legal-main h2{margin-top:36px;font-size:22px}
+.legal-main p,.legal-main li{color:#393631}
+.legal-note{padding:16px;background:#e9e5dc;border-left:3px solid var(--brown)}
 
 .overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:.25s;z-index:50}.overlay.open{opacity:1;pointer-events:auto}.drawer{margin-left:auto;width:min(460px,100%);height:100%;background:var(--cream);padding:35px;transform:translateX(100%);transition:.3s}.overlay.open .drawer{transform:none}.close{border:0;background:none;font-size:30px;float:right;line-height:1}.cart-items{margin:30px 0;min-height:120px}.cart-row{display:flex;gap:12px;border-bottom:1px solid var(--border);padding:14px 0}.cart-row img{width:70px;height:85px;object-fit:cover}.cart-row div{flex:1}.cart-row h4{margin:0 0 8px;font-size:12px}.cart-row p{margin:0;font-size:11px;color:var(--muted)}.remove{border:0;background:none;font-size:10px}.cart-total{border-top:1px solid var(--border);padding:18px 0;display:flex;justify-content:space-between}.micro{font-size:10px;line-height:1.6;color:var(--muted)}.search-modal,.modal{background:var(--cream);width:min(700px,calc(100% - 30px));padding:40px;margin:10vh auto;position:relative}.big-input{width:100%;border:0;border-bottom:1px solid var(--black);background:none;font-size:34px;outline:0;padding:15px 0}.modal table{width:100%;border-collapse:collapse;margin-top:25px;font-size:12px}.modal th,.modal td{text-align:left;padding:12px;border-bottom:1px solid var(--border)}.newsletter-popup{position:fixed;right:24px;bottom:24px;width:min(390px,calc(100% - 48px));background:var(--cream);padding:35px;box-shadow:0 20px 60px rgba(0,0,0,.2);z-index:60;transform:translateY(130%);transition:.4s}.newsletter-popup.show{transform:none}.newsletter-popup h2{font-size:35px;letter-spacing:-.05em;margin:0 0 10px}.newsletter-popup p{font-size:12px;line-height:1.6;color:#5b5751}.newsletter-popup form{display:flex;gap:8px;flex-direction:column}.newsletter-popup input{padding:13px;border:1px solid var(--border);background:transparent}
 #variantOverlay .modal{max-width:460px}
@@ -101,4 +123,8 @@ footer{background:var(--black);color:#fff;padding:75px 40px 25px}.footer-top{max
   }
 
   .hero{min-height:570px}.hero-content{left:24px;bottom:45px}.section{padding:80px 20px}.product-grid{grid-template-columns:repeat(2,1fr);gap:12px}.product-meta{display:block}.product-meta strong{display:block;margin-top:8px}.story{grid-template-columns:1fr;gap:30px}.story-mark{font-size:210px}.story-copy{padding-bottom:20px}.usp-section{grid-template-columns:1fr}.usp{border-right:0;border-bottom:1px solid var(--border);padding:35px 20px}.product-feature{grid-template-columns:1fr;padding:0}.feature-copy{padding:50px 20px 70px}.footer-top{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:12px}.filters{width:100%}.filters select{flex:1}.shop-head{display:block}.shop-head h2{margin-bottom:20px}.quick-add{opacity:1;transform:none}.mobile-menu{position:fixed;top:106px;left:0;right:0;background:var(--cream);z-index:19;padding:20px;display:none;flex-direction:column;gap:18px;border-bottom:1px solid var(--border)}.mobile-menu.open{display:flex}
+  .cookie-banner{left:12px;right:12px;bottom:12px;align-items:flex-start;flex-direction:column;padding:18px}
+  .cookie-banner .btn{width:100%;justify-content:center}
+  .legal-header{padding:20px}
+  .legal-main{padding:30px 20px 70px}
 }

@@ -6,8 +6,10 @@ Dit is een mobile-first, premium static e-commerce prototype voor MOONSTYLE.
 - index.html — complete storefront
 - styles.css — responsive design system
 - script.js — filters, cart, newsletter popup, search, size guide
-- assets/moonstyle-cream.webp — aangeleverde productfoto
-- assets/moonstyle-black.webp — aangeleverde productfoto
+- privacy.html / terms.html — concept privacybeleid en algemene voorwaarden
+- 404.html — aangepaste niet-gevonden-pagina
+- robots.txt / sitemap.xml — zoekmachinebestanden
+- assets/ — aangeleverde productfoto's en MOONSTYLE-logo
 
 ## Shopify
 De productkaarten laten eerst de klant een maat kiezen. `script.js` koppelt de
@@ -27,13 +29,28 @@ met Shopify's testmodus voordat je de website breed publiceert.
 De storefront toont geen inlog- of registratielinks. Shopify-klantaccounts blijven
 beschikbaar via Shopify's beveiligde accountpagina en checkout.
 
+## Websiteverbeteringen
+- De storefront en juridische pagina's hebben beschrijvende meta-omschrijvingen, canonical URLs en social-preview metadata.
+- Het MOONSTYLE-logo wordt gebruikt als favicon en tijdelijke social-previewafbeelding.
+- Productafbeeldingen onder de hero worden lazy-loaded en asynchroon gedecodeerd.
+- De website biedt een browseropslagmelding; analytics en advertentietrackers zijn uitgeschakeld.
+- De FAQ-link werkt, afbeeldingen hebben alt-tekst en de nieuwsbriefvelden controleren invoer.
+- De formulieren zijn nog niet gekoppeld aan een nieuwsbriefbackend: adressen worden niet verzonden en er wordt geen kortingscode uitgegeven. De honeypot is alleen een basisfilter; echte spambeveiliging vereist server-side verwerking.
+- `privacy.html` en `terms.html` zijn concepten. Vul de echte juridische verkopersgegevens, leverings- en retourvoorwaarden in en laat ze controleren voordat je verkoopt.
+- De productafbeeldingen zijn al relatief klein; de onderstaande-lui laadstrategie verbetert de initiële paginalading. Een aparte compressie/export kan later nog extra besparen.
+- GitHub Pages wordt via HTTPS gepubliceerd. Houd in de repository-instellingen **Enforce HTTPS** ingeschakeld.
+
+## Beveiliging en analytics
+Er zijn geen privé-API-sleutels nodig in de frontend. Shopify-domeinen en variant-ID's in JavaScript zijn publieke verwijzingen, geen wachtwoorden. Zet nooit geheime tokens, wachtwoorden of betaalgegevens in openbare HTML, CSS, JavaScript of GitHub-bestanden.
+Analytics zijn niet ingesteld: er is geen provider of tracking-ID opgegeven. Voeg pas analytics toe nadat een provider is gekozen en de privacy- en toestemmingsinformatie daarmee overeenkomt.
+
 ## Live zetten
 Upload de bestanden naar je hosting of Vercel/Netlify. Voor productie:
 1. Vervang de voorbeeldmaten door de echte maattabel.
 2. Voeg echte productprijzen/SKU's toe.
 3. Koppel Shopify checkout.
 4. Vervang Instagram/TikTok placeholders door de echte accounts.
-5. Voeg echte privacy-, retour- en algemene voorwaarden toe.
+5. Vul `privacy.html` en `terms.html` aan met de definitieve juridische verkopers-, verzend- en retourgegevens en laat ze controleren.
 
 De productfoto's in `assets/` zijn de door jou aangeleverde afbeeldingen.
 

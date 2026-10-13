@@ -200,8 +200,39 @@ $("#checkoutBtn").onclick=()=>{
   window.location.assign(`${SHOPIFY_STORE_URL}/cart/${checkoutUrl}`);
 };
 
-$("#newsletterForm").onsubmit=e=>{e.preventDefault();alert("Welkom bij de Faith Club. Je ontvangt 10% korting.");e.target.reset();};
-$("#popupForm").onsubmit=e=>{e.preventDefault();$("#newsletterPopup").classList.remove("show");alert("Welkom bij de Faith Club. Je ontvangt 10% korting.");};
+function connectNewsletterDemo(formSelector,statusSelector){
+  const form=$(formSelector);
+  const status=$(statusSelector);
+  form.addEventListener("submit",event=>{
+    event.preventDefault();
+    const email=form.querySelector('input[type="email"]');
+    const honeypot=form.querySelector('input[name="website"]');
+    if(honeypot.value){
+      status.textContent="Dit formulier kon niet worden verwerkt.";
+      return;
+    }
+    if(!email.value.trim()||!email.checkValidity()){
+      email.reportValidity();
+      status.textContent="Vul een geldig e-mailadres in.";
+      return;
+    }
+    status.textContent="Je e-mailadres is gecontroleerd, maar nog niet verstuurd. De nieuwsbriefdienst is nog niet gekoppeld.";
+  });
+}
+connectNewsletterDemo("#newsletterForm","#newsletterStatus");
+connectNewsletterDemo("#popupForm","#popupStatus");
+
+const cookieBanner=$("#cookieBanner");
+const cookieNoticeKey="moonstyle_essential_storage_notice";
+function closeCookieNotice(){
+  localStorage.setItem(cookieNoticeKey,"acknowledged");
+  cookieBanner.hidden=true;
+}
+if(localStorage.getItem(cookieNoticeKey)!=="acknowledged") cookieBanner.hidden=false;
+$$("[data-cookie-accept]").forEach(button=>button.addEventListener("click",closeCookieNotice));
+$$("[data-cookie-settings]").forEach(button=>button.addEventListener("click",()=>{
+  cookieBanner.hidden=false;
+}));
 
 setTimeout(()=>{if(!sessionStorage.getItem("moonstyle_popup_seen")){$("#newsletterPopup").classList.add("show");sessionStorage.setItem("moonstyle_popup_seen","1")}},10000);
 $("[data-close-popup]").onclick=()=>$("#newsletterPopup").classList.remove("show");

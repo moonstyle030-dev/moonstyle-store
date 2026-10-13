@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://moonstyle030-dev.github.io/moonstyle-store/sitemap.xml
